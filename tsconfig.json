@@ -1,0 +1,9 @@
+{
+    "compilerOptions": {
+      "resolveJsonModule": true,
+      "experimentalDecorators": true,
+      "allowJs": true,
+      "target": "ESNext",
+      "moduleResolution": "Node",
+    }
+  }
