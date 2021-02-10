@@ -5,7 +5,6 @@ import * as helmet from 'helmet';
 import * as morgan from 'morgan';
 import * as cookieParser from 'cookie-parser';
 import api from './api/index';
-// import errorMiddleware from './apiV1/middleware/error.middleware';
 import * as errorHandler from './helpers/errorHandler';
 
 class App {
