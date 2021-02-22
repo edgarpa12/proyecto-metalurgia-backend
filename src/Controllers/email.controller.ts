@@ -1,5 +1,5 @@
 import { Request, Response } from 'express';
-import CONFIG from '../Config/config';
+import * as dotenv from 'dotenv';
 
 
 export class EmailController {
@@ -10,14 +10,14 @@ export class EmailController {
         const transporter = await nodemailer.createTransport({
             service: 'gmail',
             auth: {
-                user: CONFIG.EMAIL,
-                pass: CONFIG.EMAIL_PASS
+                user: process.env.EMAIL,
+                pass: process.env.EMAIL_PASS,
             }
         });
 
         const mailOptions = {
-            from: CONFIG.EMAIL,
-            to: CONFIG.EMAIL_RECEIVER,
+            from: process.env.EMAIL,
+            to: process.env.EMAIL_RECEIVER,
             subject: 'Contacto ARM - ' + req.body.name,
             text: 'Correo: ' + req.body.email + '\n\nMensaje: ' + req.body.message + '\n\nMuchas Gracias, ' + req.body.name
         };
