@@ -11,14 +11,14 @@ export class EmailController {
         const transporter = await nodemailer.createTransport({
             service: 'gmail',
             auth: {
-                user: process.env.EMAIL || "contacto.arm.sa@gmail.com",
-                pass: process.env.EMAIL_PASS || "ContactoARM1234",
+                user: process.env.EMAIL,
+                pass: process.env.EMAIL_PASS,
             }
         });
 
         const mailOptions = {
-            from: process.env.EMAIL || "contacto.arm.sa@gmail.com",
-            to: process.env.EMAIL_RECEIVER || "edgdav00@gmail.com",
+            from: process.env.EMAIL,
+            to: process.env.EMAIL_RECEIVER,
             subject: 'Contacto ARM - ' + req.body.name,
             text: 'Correo: ' + req.body.email + '\n\nMensaje: ' + req.body.message + '\n\nMuchas Gracias, ' + req.body.name
         };
