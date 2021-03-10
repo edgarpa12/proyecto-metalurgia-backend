@@ -4,8 +4,8 @@
   "description": "backend del proyecto de Metalurgia",
   "main": "build/server.js",
   "scripts": {
-    "clean": "rimraf ./build/*",
-    "start": "nodemon ./src/server.ts",
+    "clean": "rimraf ./build/",
+    "start": "node ./build/server.js",
     "build": "tsc",
     "watch:build": "tsc --watch",
     "watch:server": "nodemon './build/server.js' --watch './build'"
